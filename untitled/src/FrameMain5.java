@@ -4,6 +4,10 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class FrameMain5 extends JFrame {
     private JTextArea jtext = new JTextArea(null,"",15,10);
@@ -25,6 +29,12 @@ public class FrameMain5 extends JFrame {
     private JLabel jlb2 = new JLabel("Password");
     private JTextField jtf = new JTextField();
     ButtonGroup but = new ButtonGroup();
+    private JMenuBar jmb = new JMenuBar();
+    private JMenu jfile = new JMenu("File");
+    private JMenu jabout = new JMenu("About");
+    private JMenuItem iopen = new JMenuItem("Open");
+    private JMenuItem isave = new JMenuItem("Save");
+    private JMenuItem iclose = new JMenuItem("Close");
     FrameMain3 ad;
     public FrameMain5(FrameMain3 af){
         ad = af;
@@ -40,6 +50,7 @@ public class FrameMain5 extends JFrame {
             }
         });
         this.setLayout(null);
+        this.setJMenuBar(jmb);
         cp = this.getContentPane();
         cp.setLayout(new BorderLayout());
         cp.add(jpe,BorderLayout.EAST);
@@ -58,6 +69,11 @@ public class FrameMain5 extends JFrame {
         jpc.add(jbt);
         jpc.add(jbt2);
         jpc.add(jbt3);
+        jmb.add(jfile);
+        jmb.add(jabout);
+        jfile.add(iopen);
+        jfile.add(isave);
+        jfile.add(iclose);
 
 
 
@@ -106,6 +122,17 @@ public class FrameMain5 extends JFrame {
 
             }
         });
+
+//        iopen.addActionListener(new AbstractAction() {
+//            @Override
+//            public void actionPerformed(ActionEvent actionEvent) {
+//                FileReader fr = new FileReader("c./test.txt");
+//                BufferedReader br = new BufferedReader(fr);
+//                while (br.ready()){
+//
+//                }
+//             }
+//        });
 
     }
 
